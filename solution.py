@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-seeds, *blocks = open(0).read().split('\n\n')
+seeds, *blocks = open('test.txt').read().split('\n\n')
 
 seeds = list(map(int, seeds.split(':')[1].split()))
 
-print(blocks)
-
+#print(blocks)
 for block in blocks:
     ranges = []
     for line in block.splitlines()[1:]:
@@ -15,4 +14,11 @@ for block in blocks:
         for a, b, c in ranges:
             if b <= x < b+c:
                 new.append(x - b + a)
-                print(f"checking {x}, new = {new}")
+                #print(f"checking {x}, new = {new}")
+                break
+        else:
+            new.append(x)
+        
+    seeds = new
+
+print(f"{seeds}")
