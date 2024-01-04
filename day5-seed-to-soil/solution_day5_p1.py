@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-seeds, *blocks = open('test.txt').read().split('\n\n')
+seeds, *blocks = open(0).read().split('\n\n')
 
 seeds = list(map(int, seeds.split(':')[1].split()))
 
@@ -21,4 +21,4 @@ for block in blocks:
         
     seeds = new
 
-print(f"{seeds}")
+print(f"{min(seeds)}")
